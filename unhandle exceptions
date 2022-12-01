@@ -1,0 +1,8 @@
+The SQLCODE function accepts no argument and returns a number code of the most recent exception.
+If the exceptions are internal, SQLCODE returns a negative number except for the NO_DATA_FOUND exception which has the number code +100.
+If the exception is user-defined, SQLCODE returns +1 or the number that you associated with the exception via the pragma EXCEPTION_INIT.
+The SQLCODE is only usable in the exception-handling section. If you use the SQLCODE function outside an exception handler, it always returns zero.
+The function SQLERRM takes an argument as an error number and returns the error message associated with that error number:SQLERRM([error_number])
+In this syntax, the error_number can be any valid Oracle error number.
+If you omit the error_number argument, the function will return the error message associated with the current value of SQLCODE.
+SQLERRM function with no argument is only useful in an exception handler.
